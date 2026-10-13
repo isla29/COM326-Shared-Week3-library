@@ -8,9 +8,69 @@ namespace Library
 {
     public class Book
     {
-        public string Title;
-        public string Author;
-        public string ISBN;
+
+        //private fields
+        private string _title;
+        private string _author;
+        private string _ISBN;
+
+        //public properties
+        public string Title
+        {
+            get { return _title; }
+            set
+            {
+                {
+                    if (!value.Any(char.IsDigit) && value != "")
+                    {
+                        _title = value;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error: Book title cannot be blank or contain numbers.");
+                    }
+                }
+            }
+        }
+
+        public string Author
+        {
+            get { return _author; }
+            set
+            {
+                {
+                    if (!value.Any(char.IsDigit) && value != "")
+                    {
+                        _author = value;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error: Book author cannot be blank or contain numbers.");
+                    }
+                }
+            }
+        }
+
+        public string ISBN
+        {
+            get { return _ISBN; }
+            set
+            {
+                {
+                    if (value.Any(char.IsDigit) && value.Length != "")
+                    {
+                        _ISBN = value;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error: ISBN must be 8 digits long and contain only numbers.");
+                    }
+                }
+            }
+        }
+
+        //constructor
+        public Book(string bookTitle, string bookAuthor, string bookISBN)
 
 
         public void DisplayInfo()
