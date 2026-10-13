@@ -56,8 +56,8 @@ namespace Library
             get { return _ISBN; }
             set
             {
-                {
-                    if (value.Any(char.IsDigit) && value.Length != "")
+                { }
+                    if (!value.Any(char.IsDigit) && value != "")
                     {
                         _ISBN = value;
                     }
@@ -67,11 +67,15 @@ namespace Library
                     }
                 }
             }
-        }
+        
 
         //constructor
         public Book(string bookTitle, string bookAuthor, string bookISBN)
-
+        {
+            Title = bookTitle;
+            Author = bookAuthor;
+            ISBN = bookISBN;
+        }
 
         public void DisplayInfo()
         {
