@@ -14,6 +14,17 @@ namespace Library
         private string _author;
         private string _ISBN;
 
+
+        //constructor
+        public Book(string bookTitle, string bookAuthor, string bookISBN)
+        {
+            Title = bookTitle;
+            Author = bookAuthor;
+            ISBN = bookISBN;
+        }
+
+
+
         //public properties
         public string Title
         {
@@ -68,14 +79,6 @@ namespace Library
                 }
             }
         
-
-        //constructor
-        public Book(string bookTitle, string bookAuthor, string bookISBN)
-        {
-            Title = bookTitle;
-            Author = bookAuthor;
-            ISBN = bookISBN;
-        }
 
         public void DisplayInfo()
         {
